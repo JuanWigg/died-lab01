@@ -14,7 +14,7 @@ public class Recta {
 	public Recta(Punto p1, Punto p2) {
 		super();
 		this.pendiente = (p1.getY() - p2.getY())/(p1.getX()-p2.getX());
-		this.ordenada =(this.pendiente*p2.getX()) + p2.getY();
+		this.ordenada = p1.getY() - this.pendiente*p1.getX();
 		
 	}
 	
@@ -39,7 +39,7 @@ public class Recta {
 	}
 	
 	public boolean equals(Recta otraRecta) {
-		if(otraRecta.getOrdenada() == this.ordenada && otraRecta.getPendiente() == this.pendiente)
+		if(otraRecta.getPendiente() == this.pendiente && this.ordenada == otraRecta.getOrdenada())
 			return true;
 		else
 			return false;
